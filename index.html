@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>teste</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #cecece;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .no {
+      background-color: #f44336;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Teste do site</h1>
+  <div class="buttons">
+    <button class="yes" onclick="window.open('https://www.youtube.com/shorts/d4vz0WX7InM', '_blank')">Sim</button>
+    <button class="no" id="noButton">Não</button>
+  </div>
+
+  <script>
+    const noButton = document.getElementById('noButton');
+
+    noButton.addEventListener('mouseover', () => {
+      const i = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+      const j = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+      noButton.style.position = 'absolute';
+      noButton.style.left = i + 'px';
+      noButton.style.top = j + 'px';
+    });
+  </script>
+
+</body>
+</html>
